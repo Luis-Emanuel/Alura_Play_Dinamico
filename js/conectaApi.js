@@ -1,11 +1,11 @@
 async function listaVideos() {
-  const conexao = await fetch("https://api-alura-play-dinamico.vercel.app/videos")
+  const conexao = await fetch("http://localhost:3000/videos")
   const conexaoConvertida = await conexao.json()
   return conexaoConvertida;
 }
 
 async function criaVideos(titulo, descricao, url, imagem){
-  const conexao = await fetch("https://api-alura-play-dinamico.vercel.app/videos", {
+  const conexao = await fetch("http://localhost:3000/videos", {
     method: "POST",
     headers: {
       "Content-type": "application/json"
@@ -27,7 +27,7 @@ async function criaVideos(titulo, descricao, url, imagem){
 }
 
 async function buscaVideos(termoDeBusca){
-  const conexao = await fetch( `https://api-alura-play-dinamico.vercel.app/videos?q=${termoDeBusca}`)
+  const conexao = await fetch( `http://localhost:3000/videos?q=${termoDeBusca}`)
   const conexaoConvertida = await conexao.json();
 
   return conexaoConvertida
